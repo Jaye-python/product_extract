@@ -40,14 +40,7 @@ Open http://127.0.0.1:5000 in your browser to:
 - Upload leaflet images directly
 - View extracted products in a table
 - Click rows to select and view details
-
-**Alternative - Command line:**
-
-```bash
-python main.py
-```
-
-Enter the path to your leaflet image when prompted.
+- Download extracted data as JSON
 
 ## Technology Choices
 
@@ -89,7 +82,6 @@ Products are extracted in this JSON structure:
 
 ```
 product_extract/
-├── main.py              # Main extraction script
 ├── app.py               # Flask web application
 ├── product_extractor.py # Core extraction logic
 ├── file_upload.py       # Image processing utilities
