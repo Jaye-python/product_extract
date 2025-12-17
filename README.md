@@ -11,18 +11,24 @@ A Python application that extracts product information from product images using
 
 ## Setup
 
-1. **Create virtual environment:**
+1. **Clone repository:**
+   ```bash
+   git clone <repository-url>
+   cd product_extract
+   ```
+
+2. **Create virtual environment:**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-2. **Install dependencies:**
+3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Configure OpenAI API:**
+4. **Configure OpenAI API:**
    ```bash
    cp .env.example .env
    # Edit .env and add your OpenAI API key and model
