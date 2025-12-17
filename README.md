@@ -1,6 +1,6 @@
 # Product Data Extraction Pipeline
 
-A Python application that extracts product information from leaflet images using OpenAI's Vision API and displays results in a web interface.
+A Python application that extracts product information from product images using OpenAI's GPT-5 for inference and displays results in a web interface.
 
 ## Features
 
