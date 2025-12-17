@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Extraction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Data Extraction</h1>
+        
+        <div class="upload-section">
+            <h2>Upload Leaflet Image</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form action="{{ url_for('upload_and_extract') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept=".jpg,.jpeg,.png" required>
+                <button type="submit">Extract Products</button>
+            </form>
+        </div>
+        
+        {% if products %}
+            <div class="download-section">
+                <a href="{{ url_for('download_json') }}" class="download-btn">Download JSON</a>
+            </div>
+            
+            <div class="table-container">
+                <table id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr class="product-row" data-product="{{ loop.index0 }}">
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.description }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="selectedProduct" class="selected-info">
+                <p>Click on a row to select a product</p>
+            </div>
+        {% else %}
+            <div class="no-data">
+                <p>No products found. Upload an image above to extract products.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.product-row');
+            const selectedDiv = document.getElementById('selectedProduct');
+            const uploadForm = document.getElementById('uploadForm');
+            const uploadStatus = document.getElementById('uploadStatus');
+            
+            // Product row selection
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    rows.forEach(r => r.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const cells = this.querySelectorAll('td');
+                    selectedDiv.innerHTML = `
+                        <h3>Selected Product:</h3>
+                        <p><strong>Name:</strong> ${cells[0].textContent}</p>
+                        <p><strong>Price:</strong> ${cells[1].textContent}</p>
+                        <p><strong>Description:</strong> ${cells[2].textContent}</p>
+                    `;
+                });
+            });
+            
+            // No JavaScript needed for simple form submission
+        });
+    </script>
+</body>
+</html>

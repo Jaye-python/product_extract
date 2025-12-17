@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Aussie Asparagus",
+    "price": "2.49",
+    "description": "Fresh, locally grown asparagus."
+  },
+  {
+    "name": "West Australian Strawberries 500g Pack",
+    "price": "2.49",
+    "description": "Seasonal strawberries."
+  },
+  {
+    "name": "Australian Blueberries 125g Pack",
+    "price": "3.99",
+    "description": "Sweet blueberries."
+  },
+  {
+    "name": "Australian Corn on the Cob 4 Pack",
+    "price": "3.99",
+    "description": "Fresh corn on the cob."
+  },
+  {
+    "name": "West Australian Mushrooms 375g Pack",
+    "price": "4.99",
+    "description": "Mushrooms for cooking."
+  },
+  {
+    "name": "Schnitzels Frozen",
+    "price": "8.49",
+    "description": "Frozen chicken schnitzels."
+  },
+  {
+    "name": "Ocean King Frozen Barramundi Fillets 600g",
+    "price": "8.99",
+    "description": "Frozen fish fillets."
+  },
+  {
+    "name": "Tim Tam Chocolate Biscuits 6 Pack",
+    "price": "2.49",
+    "description": "Tim Tam biscuits."
+  },
+  {
+    "name": "Coca-Cola Classic 1.25L",
+    "price": "9.49",
+    "description": "Coca-Cola soft drink."
+  }
+]
