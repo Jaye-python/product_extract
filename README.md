@@ -13,7 +13,7 @@ A Python application that extracts product information from product images using
 
 1. **Clone repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Jaye-python/product_extract.git
    cd product_extract
    ```
 
